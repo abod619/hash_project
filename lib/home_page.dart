@@ -1,149 +1,168 @@
-
 import 'package:flutter/material.dart';
 import 'package:my_first_project/avatar_profile.dart';
+import 'package:my_first_project/bootom_rec_snap.dart';
+import 'package:my_first_project/circle_snap.dart';
 import 'package:my_first_project/header_hash.dart';
+import 'package:my_first_project/rec_snap.dart';
+import 'package:my_first_project/snap_headr.dart';
 
 class HomePage extends StatelessWidget {
-Color s = Colors.blue;
-  
+  Color s = Colors.blue;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(
-        child: Column(
-          
+      backgroundColor: Colors.black,
+      body: Padding(
+        padding: const EdgeInsets.all(8),
+        child: ListView(
           children: [
-            Hash(),
-            SizedBox(height: 30,),
-            AvatarProfile(),
-            SizedBox(height: 40,),
-            // here box name
-            Container(
-              alignment: Alignment.center,
-              width: 350,
-              height: 70,
-              decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey,
-                    blurRadius: 5
-                  )
-                ]
-              ),
-              child: Text(
-                'Name: Abdullah Mohammed Al-Owais',
-                style: TextStyle(
-                  fontSize: 17,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white
-                ),
-              ),
-
-            ),
-            // here personal information 
-            SizedBox(height: 30,),
-            Padding(
-              padding: const EdgeInsets.all(15),
-              child: Container(
-                alignment: Alignment.center,
-                height: 100,
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Colors.grey,
-                  borderRadius: BorderRadius.circular(12),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black,
-                      blurRadius: 5
-                    )
-                  ]
-                ),
-                child: Row(
-                  
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Column(
+              children: [
+                //headr
+                SnapHeadr(),
+                SizedBox(height: 10),
+                Column(
                   children: [
-                   // column 1
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                    Row(
                       children: [
-                        Row(
-                          children: [
-                            Text(
-                          'Number Phone: ',
-                          style:TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white60
-                          ),
-                          ),
-
-                          Text(
-                            '0535176889',
-                            style:TextStyle(
-                            fontSize: 12,
-                            color: Colors.black,
+                        Text(
+                          'الاصدقاء',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
                             fontWeight: FontWeight.bold,
                           ),
-                          )
-                          ],
-                        )
+                        ),
+                        Icon(Icons.chevron_right, color: Colors.white),
                       ],
                     ),
-                    SizedBox(width: 20,),
-                    //column 2
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                          'Email: ',
-                          style:TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white60
-                          ),
-                        ),
+                    SizedBox(height: 5),
 
-                        Text(
-                          'aa1bdd220@gmail.com', 
-                          style:TextStyle(
-                            fontSize: 12,
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          )
+                    SingleChildScrollView(
+                      physics: ScrollPhysics(),
+
+                      scrollDirection: Axis.horizontal,
+                      child: Expanded(
+                        child: Row(
+                          children: [
+                            CircleSnap('ابو محمد', 'asset/c1.png'),
+                            SizedBox(width: 5),
+                            CircleSnap('Ey', 'asset/c2.png'),
+                            SizedBox(width: 5),
+                            CircleSnap('ابو عزوز', 'asset/c3.png'),
+                            SizedBox(width: 5),
+                            CircleSnap('SAYAF', 'asset/c4.png'),
+                            SizedBox(width: 5),
+                            CircleSnap('YOUSEF', 'asset/c5.jpeg'),
+                            SizedBox(width: 5),
+                            CircleSnap('عبدالرحمن', 'asset/c6.jpeg'),
+                            SizedBox(width: 5),
+                            CircleSnap('SH🩶🩶', 'asset/c1.png'),
+                            SizedBox(width: 5),
+                            CircleSnap('Abdullah', 'asset/c2.png'),
+                            SizedBox(width: 5),
+                            CircleSnap('KRM', 'asset/c3.png'),
+                            SizedBox(width: 5),
+                            CircleSnap('Sultan', 'asset/c4.png'),
+                            SizedBox(width: 5),
+                            CircleSnap('FARES', 'asset/c5.jpeg'),
+                            SizedBox(width: 5),
+                            CircleSnap('سامي', 'asset/c6.jpeg'),
                           ],
                         ),
+                      ),
+                    ),
+
+                    SizedBox(height: 5),
+                    Row(
+                      children: [
+                        Text(
+                          'اكتشف',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Icon(Icons.chevron_right, color: Colors.white),
                       ],
-                    )
+                    ),
+                    SizedBox(height: 5),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          RecSnap('ياسر بن ابراهيم', 'asset/c7.jpeg'),
+                          SizedBox(width: 8),
+                          RecSnap('سلوم', 'asset/8.jpeg'),
+                          SizedBox(width: 8),
+                          RecSnap('حمد', 'asset/9.jpeg'),
+                          SizedBox(width: 8),
+                          RecSnap('معاذ', 'asset/10.jpeg'),
+                          SizedBox(width: 8),
+                          RecSnap('احمد الشهري', 'asset/11.jpg'),
+                          // SizedBox(width: 8),
+                          // RecSnap('فيصل السيف'),
+                          // SizedBox(width: 8),
+                          // RecSnap('صالح'),
+                          // SizedBox(width: 8),
+                          // RecSnap('عبدالرحمن'),
+                          // SizedBox(width: 8),
+                          // RecSnap('RAED'),
+                          // SizedBox(width: 8),
+                          // RecSnap('Ahmed Ali'),
+                          // SizedBox(width: 8),
+                          // RecSnap('عبدالله السبع'),
+                          // SizedBox(width: 8),
+                          // RecSnap('LLE'),
+                          // SizedBox(width: 8),
+                          // RecSnap('FAHAD'),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 7),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        BootomRecSnap('Ali Amin'),
+                         BootomRecSnap('ابو زياد'),
+                     ],
+                    ),
+                    SizedBox(height: 7),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        BootomRecSnap('سالم'),
+                         BootomRecSnap('احمد'),
+                     ],
+                    ),
+                    SizedBox(height: 7),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        BootomRecSnap('عماد'),
+                         BootomRecSnap('Jantee'),
+                     ],
+                    ),
+                    SizedBox(height: 7),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        BootomRecSnap('جو حطاب'),
+                         BootomRecSnap('Yousef'),
+                     ],
+                    ),
                   ],
                 ),
-              ),
+              ],
             ),
-            SizedBox(height: 60,),
-
-            // click button
-            ElevatedButton(onPressed: (){
-              print('My Major is Programming and Applications');
-            }, 
-            child: Text(
-              'Click Here',
-               style: TextStyle(
-                color: Colors.black)
-                ,),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  elevation: 20
-                  )
-            )
           ],
         ),
-      )
+      ),
     );
   }
 }
